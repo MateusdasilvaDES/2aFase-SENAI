@@ -1,0 +1,19 @@
+.Media_Container{
+
+    display: block;
+    border: solid black;
+    padding: 20px;
+    border-radius: 10px;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+
+}
+
+.Media_Container button{
+
+    align-items: center;
+    margin: auto;
+    width: fit-content;
+}

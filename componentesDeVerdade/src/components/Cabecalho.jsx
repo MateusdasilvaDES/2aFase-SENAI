@@ -1,6 +1,7 @@
 import "./Cabecalho.css"
 
-function Cabecalho() {
+function Cabecalho(){
+  
   return (
     <div className = "Cabecalho-container">
       <h1>Treinar dragão</h1>

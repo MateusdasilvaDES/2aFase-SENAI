@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+
 function Dois_copos() {
 
     const[resultado, setResultado] = useState()
@@ -25,12 +26,12 @@ function Dois_copos() {
   return (
 
 
-    <div>
+    <div className='DoisDiv'>
         <h1>Numero impar ou par</h1>
-      <button onClick={impar_ou_par}>Click para digitar um numero</button>
+      <button onClick={impar_ou_par}>Click para digitar um numero</button><br/><br/>
       {resultado}
-      <br />
-      <br />
+      <br/>
+      <br/>
     </div>
   )
 }

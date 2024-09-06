@@ -1,8 +1,10 @@
 .Numero_possitivo{
     display: block;
     align-items: center;
-    width: fit-content;
+    width: 15%;
     margin: auto;
+    border: 3px solid black;
+    padding: 10px;
 
 
 }

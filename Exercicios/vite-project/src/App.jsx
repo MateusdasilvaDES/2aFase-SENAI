@@ -21,15 +21,19 @@ import './Componentes/Garcon.css'
 import Velocidade_luz from './Componentes/Velocidade_luz'
 import './Componentes/Velocidade_luz.css'
 
+
 // import questão 5
-import Viagem from './Componentes/Viagem'
+
+import Comerciante from './Componentes/Comerciante'
+import './Componentes/Comerciante.css'
+
 
 
 function App() {
  
   return (
     <>
-      <Viagem/>
+      <Comerciante/>
       <Velocidade_luz/>
       <Garcon/>
       <Dois_copos/>

@@ -18,14 +18,25 @@ import './Componentes/Garcon.css'
 
 // import questão 4
 
-import Velocidade_luz from './Componentes/Velocidade_luz'
+import Velocidade_luz from './Componentes/Velocidade_luz.jsx'
 import './Componentes/Velocidade_luz.css'
 
 
 // import questão 5
 
-import Comerciante from './Componentes/Comerciante'
+import Comerciante from './Componentes/Comerciante.jsx'
 import './Componentes/Comerciante.css'
+
+// import questão 6
+
+import Nota_parcial from './Componentes/Nota_parcial.jsx'
+import './Componentes/Nota_parcial.css'
+
+
+// imort questão 7
+
+import Porco from './Componentes/Porco.jsx'
+import './Componentes/Porco.css'
 
 
 
@@ -33,6 +44,8 @@ function App() {
  
   return (
     <>
+      <Porco/>
+      <Nota_parcial/>
       <Comerciante/>
       <Velocidade_luz/>
       <Garcon/>

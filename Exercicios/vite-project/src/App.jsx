@@ -44,6 +44,7 @@ function App() {
  
   return (
     <>
+      
       <Porco/>
       <Nota_parcial/>
       <Comerciante/>

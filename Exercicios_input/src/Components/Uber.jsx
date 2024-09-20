@@ -24,38 +24,89 @@ e apresente o valor final da conta e sua composição (os detalhes,
 pagamentos, descontos...); */
 
 import { useState } from "react"
+import Relatorio_uber from "./Relatorio_uber"
 
 function Uber() {
-   const [resultado, setResultado] = useState()
-   const [quantDiaria, setQuantDiaria] = useState()
+   const [relatorio, setRelatorio] = useState()
+   const [quantDiaria, setQuantDiaria] = useState('')
+   
 
      function valor_final(){
 
       let valor_cinco_diaria = 100
       let valor_seis_a_dez = 90
       let valor_onze_diarias = 80 
-      let desconto_um = 10 
-      let desconto_carteirinha = 15
-      let munta_dados_morais = 150
+      let desconto_emocional 
+      let desconto_carteirinha 
+      let multa_danos_morais = 150
       let valor_total
-      let valor_total_desconto
+      let valor_total_com_desconto
+    
 
-     if({quantDiaria} >= 1 && {quantDiaria} <= 5 ){
+     if(quantDiaria >= 1 && quantDiaria <= 5 ){
 
-      valor_total = {quantDiaria} * 100
+         valor_total = quantDiaria * valor_cinco_diaria
+         desconto_emocional = valor_total * 10 / 100
+         desconto_carteirinha = valor_total * 15 / 100
+         valor_total_com_desconto = valor_total - desconto_emocional - desconto_carteirinha - multa_danos_morais
       
 
-        let relatorio = { 
+        let relatorio_objeto = { 
         
          quantidade_diarias: quantDiaria,
+         preco_diaria: valor_cinco_diaria,
+         valor_multa: multa_danos_morais,
+         desconto_da_carteirinha: desconto_carteirinha,
+         desconto_da_relação_emocional: desconto_emocional,
+         valor_total_sem_desconto: valor_total,
+         valor_com_desconto: valor_total_com_desconto
+        
          
-
         }
+        setRelatorio(relatorio_objeto)
 
-     }
+     }else if(quantDiaria >= 6 && quantDiaria <= 10){
 
+        valor_total = quantDiaria * valor_seis_a_dez
+        desconto_emocional = valor_total * 10 / 100
+        desconto_carteirinha = valor_total * 15 / 100
+        valor_total_com_desconto = valor_total - desconto_emocional - desconto_carteirinha - multa_danos_morais
+      
+       let relatorio_objeto = { 
+        
+        quantidade_diarias: quantDiaria,
+        preco_diaria: valor_seis_a_dez,
+        valor_multa: multa_danos_morais,
+        desconto_da_carteirinha: desconto_carteirinha,
+        desconto_da_relação_emocional: desconto_emocional,
+        valor_total_sem_desconto: valor_total,
+        valor_com_desconto: valor_total_com_desconto
+       
+        
+       }
+       setRelatorio(relatorio_objeto)
 
+      }else if (quantDiaria >= 11){
 
+        valor_total = quantDiaria * valor_onze_diarias
+        desconto_emocional = valor_total * 10 / 100
+        desconto_carteirinha = valor_total * 15 / 100
+        valor_total_com_desconto = valor_total - desconto_emocional - desconto_carteirinha - multa_danos_morais
+        
+       let relatorio_objeto = { 
+        
+        quantidade_diarias: quantDiaria,
+        preco_diaria: valor_onze_diarias,
+        valor_multa: multa_danos_morais,
+        desconto_da_carteirinha: desconto_carteirinha,
+        desconto_da_relação_emocional: desconto_emocional,
+        valor_total_sem_desconto: valor_total,
+        valor_com_desconto: valor_total_com_desconto
+       
+        
+       }
+       setRelatorio(relatorio_objeto)
+      }
      }
   return (
     <div>
@@ -66,6 +117,11 @@ function Uber() {
         onChange = { (Event => {setQuantDiaria(Event.target.value)})}
       />
       <button onClick = {valor_final}>Valor total</button>
+      <br/>
+      <br/>
+      {relatorio && 
+      <Relatorio_uber infos={relatorio}/>}
+
     </div>
 
   )
